@@ -1,25 +1,25 @@
 class DetailMeal extends HTMLElement {
   set data(data) {
-    this._data = data;
-    this.render();
+    this._data = data
+    this.render()
   }
 
   render() {
     const { strMeal, strInstructions, strMealThumb, strCategory, strArea } =
-      this._data;
+      this._data
 
-    let li = '';
+    let li = ''
 
-    for (let i = 1; i <= 20; i++) {
+    for (let i = 1; i <= 20; i += 1) {
       if (
-        this._data[`strIngredient${i}`] != '' &&
-        this._data[`strIngredient${i}`] != null
+        this._data[`strIngredient${i}`] !== '' &&
+        this._data[`strIngredient${i}`] !== null
       ) {
         li += `<li class="list-group-item rounded-pill flex-fill">${
           this._data[`strIngredient${i}`]
         }   <span class="badge bg-secondary rounded-pill">${
           this._data[`strMeasure${i}`]
-        }</span></li>`;
+        }</span></li>`
       }
     }
 
@@ -49,8 +49,8 @@ class DetailMeal extends HTMLElement {
     
   </div>
 </div>
-</div> `;
+</div> `
   }
 }
 
-customElements.define('detail-meal', DetailMeal);
+customElements.define('detail-meal', DetailMeal)

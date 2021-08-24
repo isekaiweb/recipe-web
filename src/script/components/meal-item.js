@@ -1,14 +1,14 @@
-import './detail-meal.js';
+import './detail-meal.js'
 
 class MealItem extends HTMLElement {
   set mealData(mealData) {
-    this._mealData = mealData;
-    this.render();
+    this._mealData = mealData
+    this.render()
   }
 
   render() {
-    const { strMeal, strInstructions, strMealThumb } = this._mealData;
-    const detailMealElement = document.createElement('detail-meal');
+    const { strMeal, strInstructions, strMealThumb } = this._mealData
+    const detailMealElement = document.createElement('detail-meal')
 
     this.innerHTML = `
         <img src="${strMealThumb}" class="rounded border border-white" alt="${strMeal}"/>
@@ -20,14 +20,14 @@ class MealItem extends HTMLElement {
             )} ...</span>
          </p>
 
-    `;
+    `
 
-    this.classList.add('d-flex', 'gap-2', 'p-2', 'rounded');
+    this.classList.add('d-flex', 'gap-2', 'p-2', 'rounded')
     this.addEventListener('click', () => {
-      detailMealElement.data = this._mealData;
-      this.parentElement.parentElement.innerHTML = `${detailMealElement.outerHTML}`;
-    });
+      detailMealElement.data = this._mealData
+      this.parentElement.parentElement.innerHTML = `${detailMealElement.outerHTML}`
+    })
   }
 }
 
-customElements.define('meal-item', MealItem);
+customElements.define('meal-item', MealItem)

@@ -1,15 +1,15 @@
 class AlphabetList extends HTMLElement {
   connectedCallback() {
-    this.render();
+    this.render()
   }
 
   set clickEvent(event) {
-    this._clickEvent = event;
-    this.render();
+    this._clickEvent = event
+    this.render()
   }
 
   get value() {
-    return this._value;
+    return this._value
   }
 
   render() {
@@ -39,13 +39,13 @@ class AlphabetList extends HTMLElement {
       'W',
       'X',
       'Y',
-      'Z',
-    ];
+      'Z'
+    ]
 
-    this.innerHTML = '';
-    alphabet.forEach((abj) => {
-      this.innerHTML += `<span class="bg-white rounded alphabet-item text-center">${abj}</span>`;
-    });
+    this.innerHTML = ''
+    alphabet.forEach(abj => {
+      this.innerHTML += `<span class="bg-white rounded alphabet-item text-center">${abj}</span>`
+    })
 
     this.innerHTML += `<style>
           .alphabet-item{
@@ -60,43 +60,43 @@ class AlphabetList extends HTMLElement {
             background-color:#FFBB69 !important;
             color:#f1f1f1;
           }
-      </style>`;
+      </style>`
 
-    this.#setItem();
+    this._setItem()
   }
 
-  #disableItem(item) {
-    item.classList.remove('text-white');
-    item.classList.remove('bg-primary');
-    item.classList.add('bg-white');
+  static disableItem(item) {
+    item.classList.remove('text-white')
+    item.classList.remove('bg-primary')
+    item.classList.add('bg-white')
   }
 
-  #activeItem(item) {
-    item.classList.add('bg-primary');
-    item.classList.add('text-white');
-    item.classList.remove('bg-white');
+  static activeItem(item) {
+    item.classList.add('bg-primary')
+    item.classList.add('text-white')
+    item.classList.remove('bg-white')
   }
 
-  #setItem() {
-    const alphabetItemElement = this.querySelectorAll('.alphabet-item');
+  _setItem() {
+    const alphabetItemElement = this.querySelectorAll('.alphabet-item')
 
-    this.#activeItem(alphabetItemElement[0]);
-    this._value = alphabetItemElement[0].textContent;
+    AlphabetList.activeItem(alphabetItemElement[0])
+    this._value = alphabetItemElement[0].textContent
 
-    alphabetItemElement.forEach((item) => {
+    alphabetItemElement.forEach(item => {
       item.addEventListener('click', () => {
-        this.#activeItem(item);
-        this._value = item.textContent;
+        AlphabetList.activeItem(item)
+        this._value = item.textContent
 
-        alphabetItemElement.forEach((aItem) => {
-          if (item != aItem) {
-            this.#disableItem(aItem);
+        alphabetItemElement.forEach(aItem => {
+          if (item !== aItem) {
+            AlphabetList.disableItem(aItem)
           }
-        });
-      });
-      item.addEventListener('click', this._clickEvent);
-    });
+        })
+      })
+      item.addEventListener('click', this._clickEvent)
+    })
   }
 }
 
-customElements.define('alphabet-list', AlphabetList);
+customElements.define('alphabet-list', AlphabetList)
