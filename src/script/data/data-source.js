@@ -13,19 +13,19 @@ class DataSource {
         reject(`${keyword} not found`)
       })
     } catch (err) {
-      return alert(err)
+      return Promise.reject(err)
     }
   }
 
   static getByFirstLetter(keyword) {
-    return DataSource.searchMeal(
+    return this.searchMeal(
       'https://www.themealdb.com/api/json/v1/1/search.php?f=',
       keyword
     )
   }
 
   static getByName(keyword) {
-    return DataSource.searchMeal(
+    return this.searchMeal(
       'https://www.themealdb.com/api/json/v1/1/search.php?s=',
       keyword
     )

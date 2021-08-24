@@ -43,6 +43,7 @@
     "prettier": "^2.3.2",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.2.1",
+    "terser-webpack-plugin": "^5.1.4",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.8.0",
     "webpack-dev-server": "^4.0.0",
@@ -50,6 +51,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "regenerator-runtime": "^0.13.9"
+    "regenerator-runtime": "^0.13.9",
+    "throttle-debounce": "^3.0.1"
   }
 }

@@ -43,8 +43,8 @@ class AlphabetList extends HTMLElement {
     ]
 
     this.innerHTML = ''
-    alphabet.forEach(abj => {
-      this.innerHTML += `<span class="bg-white rounded alphabet-item text-center">${abj}</span>`
+    alphabet.forEach(letter => {
+      this.innerHTML += `<span class="bg-white rounded alphabet-item text-center">${letter}</span>`
     })
 
     this.innerHTML += `<style>

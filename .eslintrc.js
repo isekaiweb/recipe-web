@@ -13,6 +13,13 @@ module.exports = {
     'no-bitwise': ['error', { allow: ['|'] }],
     'import/extensions': ['never' | 'always' | 'ignorePackages'],
     'prefer-promise-reject-errors': ['off', { allowEmptyReject: true }],
-    'no-alert': 'off'
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: true,
+        optionalDependencies: true,
+        peerDependencies: true
+      }
+    ]
   }
 }

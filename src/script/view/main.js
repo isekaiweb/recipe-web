@@ -2,6 +2,8 @@ import '../components/app-bar.js'
 import '../components/alphabet-list.js'
 import '../components/meal-list.js'
 import '../components/footer-recipe.js'
+import { debounce } from 'throttle-debounce'
+
 import DataSource from '../data/data-source.js'
 
 const main = () => {
@@ -17,14 +19,14 @@ const main = () => {
     mealListElement.renderError(message)
   }
 
-  const onButtonSearchClicked = async () => {
+  const onButtonSearchClicked = debounce(1000, async () => {
     try {
       const results = await DataSource.getByName(searchElement.value)
       renderResult(results)
     } catch (rejectedReason) {
       fallbackResult(rejectedReason)
     }
-  }
+  })
 
   const onButtonAlphabetClicked = async () => {
     try {
