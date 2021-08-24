@@ -44,7 +44,7 @@ class AlphabetList extends HTMLElement {
 
     this.innerHTML = '';
     alphabet.forEach((abj) => {
-      this.innerHTML += `<span class="bg-white shadow-sm rounded alphabet-item text-center">${abj}</span>`;
+      this.innerHTML += `<span class="bg-white rounded alphabet-item text-center">${abj}</span>`;
     });
 
     this.innerHTML += `<style>
@@ -53,6 +53,7 @@ class AlphabetList extends HTMLElement {
               height:38px;
               width: 38px;
               line-height:35px;
+              user-select: none;
           }
 
           .alphabet-item:hover{

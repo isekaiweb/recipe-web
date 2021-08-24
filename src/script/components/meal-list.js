@@ -14,7 +14,7 @@ class MealList extends HTMLElement {
     }
 
     meal-item:hover{
-        box-shadow: 0 0 6px #F1F0F0;
+        box-shadow: 0 0 8px #F1F0F0;
     }
 
     meal-item > img{
@@ -23,13 +23,12 @@ class MealList extends HTMLElement {
     }
 
     meal-item > p {
-        width:230px;
+        width:220px;
     }
     </style>`;
+
     this._meals.forEach((meal) => {
       const mealItemElement = document.createElement('meal-item');
-      mealItemElement.classList.add('d-flex', 'gap-2', 'p-2', 'rounded');
-      mealItemElement.setAttribute('id', `${meal.idMeal}`);
       mealItemElement.mealData = meal;
       this.appendChild(mealItemElement);
     });
