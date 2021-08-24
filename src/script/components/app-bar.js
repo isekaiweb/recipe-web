@@ -1,9 +1,9 @@
-import './search-bar.js';
-import logo from '../../assets/ic_recipe.svg';
+import './search-bar.js'
+import logo from '../../assets/ic_recipe.svg'
 
 class AppBar extends HTMLElement {
   connectedCallback() {
-    this.render();
+    this.render()
   }
 
   render() {
@@ -11,11 +11,11 @@ class AppBar extends HTMLElement {
       <img
       src=${logo}
       alt="logo"
-      class="img-fluid flex-grow"
+      class="img-fluid"
     />
-    <search-bar class="input-group flex-nowrap input-group-lg"></search-bar>
-    `;
+    <search-bar class="input-group input-group-lg"></search-bar>
+    `
   }
 }
 
-customElements.define('app-bar', AppBar);
+customElements.define('app-bar', AppBar)
