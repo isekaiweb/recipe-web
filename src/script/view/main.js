@@ -19,7 +19,7 @@ const main = () => {
     mealListElement.renderError(message)
   }
 
-  const onButtonSearchClicked = debounce(1000, async () => {
+  const onButtonSearchClicked = debounce(400, async () => {
     try {
       const results = await DataSource.getByName(searchElement.value)
       renderResult(results)
