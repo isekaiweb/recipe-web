@@ -24,12 +24,12 @@ class DetailMeal extends HTMLElement {
     }
 
     this.innerHTML = `
-    <nav aria-label="breadcrumb breadcrumb-white">
+    <div aria-label="breadcrumb breadcrumb-white" class="mt-5">
     <ol class="breadcrumb">
       <li class="breadcrumb-item text-white"><a href="">Home</a></li>
       <li class="breadcrumb-item active text-white fw-bold" aria-current="page">${strCategory}</li>
     </ol>
-  </nav>
+  </div>
   <div class="mb-3">
 <div class="row g-3 mt-3">
   <div class="col-md-4">
